@@ -29,7 +29,8 @@ function App() {
   // Ensure app is initialized when it is ready to be
   useEffect(() => {
     // Initialize Firebase
-    const app = initializeApp(FirebaseConfig);
+    //const app = initializeApp(FirebaseConfig);
+    initializeApp(FirebaseConfig);
     setAppInitialized(true);
   }, []);
 
@@ -42,7 +43,7 @@ function App() {
       auth.onAuthStateChanged(function (user) {
         if (user) {
           // User is signed in
-          const uid = user.uid;
+          //const uid = user.uid;
           setUserInformation(user);
           setLoggedIn(true);
         } else {
