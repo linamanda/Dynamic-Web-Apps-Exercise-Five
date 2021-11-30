@@ -50,8 +50,9 @@ function App() {
           setUserInformation({});
           setLoggedIn(false);
         }
+        // Whenever state changes setLoading to false
+        setLoading(false);
       });
-      setLoading(false);
     }
   }, [appInitialized]);
 
@@ -67,7 +68,7 @@ function App() {
       });
   }
 
-  if (loading) return null;
+  if (loading || !appInitialized) return null;
 
   return (
     <>
